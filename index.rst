@@ -16,9 +16,13 @@ The interface between the EFD and Data Management (DM) is controlled by :cite:`L
 .. note::
 
   OCS-DM-COM-ICD-0026 should refer to the "EFD Transformation Service" rather than the "EFD Replicator device".
+
   OCS-DM-COM-ICD-0029 should be synchronized with DMS-REQ-0102 mentioned below.
+
   OCS-DM-COM-ICD-0030 needs to be changed to indicate that we are not using MySQL replication anymore.
+
   We need to add a requirement to LSE-72 that the OCS provide an interface to retrieve the metadata (schema, table structure) for the EFD that is described in LTS-210 section 5.6.
+
   We also need to add a requirement to LSE-72 that no data made visible to DM through the EFD query interface will ever be rolled back, altered in place, or removed.
 
 
