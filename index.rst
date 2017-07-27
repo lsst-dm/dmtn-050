@@ -4,12 +4,6 @@
 
 .. sectnum::
 
-.. note::
-
-   **This technote is not yet published.**
-
-How the Engineering and Facilities Database will be transformed, maintained, and used within DM
-
 .. _live-efd:
 
 Live EFD
