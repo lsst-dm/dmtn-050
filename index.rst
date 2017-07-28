@@ -60,6 +60,10 @@ Future schemas may add columns to the EFD tables and may add additional tables.
 Such additions might include join tables linking visits, epochs of stability, or other identifiers with time ranges.
 They might also include convenience tables of extracted values, potentially averaged, filtered, interpolated, or otherwise processed from a window of values to a single number.
 
+Because the schema will evolve and the methods for processing windows of values will evolve, we may need to save different versions of the transformed/processed data (a form of bitemporality).
+If the schema evolution is strictly additive, this occurs naturally through accumulation of tables and columns.
+If not, schema versioning may need to be implemented.
+
 
 .. _large-file-annex:
 
