@@ -9,9 +9,9 @@
 Original Format EFD
 ===================
 
-The design of the "live" Engineering and Facilities Database (EFD) provided by the Observatory Control System (OCS) is described in :cite:`LTS-210`.
+The design of the "live" Engineering and Facilities Database (EFD) provided by the Observatory Control System (OCS) is described in :lts:`210` :cite:`LTS-210`.
 There are two replicas of this, one at the Summit and one at the Base.
-The interface between the EFD and Data Management (DM) is controlled by :cite:`LSE-72`, in particular requirements OCS-DM-COM-ICD-0023, 0024, 0025, 0026, 0027, 0028, 0029, and 0030.
+The interface between the EFD and Data Management (DM) is controlled by :lse:`72` :cite:`LSE-72`, in particular requirements OCS-DM-COM-ICD-0023, 0024, 0025, 0026, 0027, 0028, 0029, and 0030.
 
 .. note::
 
@@ -21,9 +21,9 @@ The interface between the EFD and Data Management (DM) is controlled by :cite:`L
 
   OCS-DM-COM-ICD-0030 needs to be changed to indicate that we are not using MySQL replication anymore.
 
-  We need to add a requirement to :cite:`LSE-72` that the OCS provide an interface to retrieve the metadata (schema, table structure) for the EFD that is described in :cite:`LTS-210` section 5.6.
+  We need to add a requirement to :lse:`72` that the OCS provide an interface to retrieve the metadata (schema, table structure) for the EFD that is described in :lts:`210` section 5.6.
 
-  We also need to add a requirement to :cite:`LSE-72` that no data made visible to DM through the EFD query interface will ever be rolled back, altered in place, or removed.
+  We also need to add a requirement to :lse:`72` that no data made visible to DM through the EFD query interface will ever be rolled back, altered in place, or removed.
 
 
 .. _transformation:
@@ -32,11 +32,11 @@ Transformation
 ==============
 
 The DM EFD Transformation Service will extract content from the Base replica of the EFD, transform it (lightly), and load it into the Reformatted EFD within the Consolidated Database at NCSA.
-The Concept of Operations for this service is described in :cite:`LDM-230` section 2.4.
+The Concept of Operations for this service is described in :ldm:`230` :cite:`LDM-230` section 2.4.
 
 This ETL process is under the control of the OCS via a commandable SAL component implemented by the Base Data Management Control System (DMCS).
 The Reformatted EFD will be replicated to the Base via Data Backbone mechanisms for use in the Chilean Data Access Center (DAC).
-The latency requirement for delivery of transformed EFD records in both locations is very relaxed: 24 hours, as documented in DMS-REQ-0102 in :cite:`LSE-61`.
+The latency requirement for delivery of transformed EFD records in both locations is very relaxed: 24 hours, as documented in DMS-REQ-0102 in :lse:`61` :cite:`LSE-61`.
 However, we expect that the EFD Transformation Service will run continuously and should provide latencies of less than 5 minutes in normal operation.
 After an outage, latencies will increase until catch-up has completed.
 Outages could be intentional if the OCS disables the EFD Transformation Service, or they could be unintentional if a software, hardware, or network failure occurs.
