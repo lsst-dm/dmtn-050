@@ -21,9 +21,9 @@ The interface between the EFD and Data Management (DM) is controlled by :cite:`L
 
   OCS-DM-COM-ICD-0030 needs to be changed to indicate that we are not using MySQL replication anymore.
 
-  We need to add a requirement to LSE-72 that the OCS provide an interface to retrieve the metadata (schema, table structure) for the EFD that is described in LTS-210 section 5.6.
+  We need to add a requirement to :cite:`LSE-72` that the OCS provide an interface to retrieve the metadata (schema, table structure) for the EFD that is described in :cite:`LTS-210` section 5.6.
 
-  We also need to add a requirement to LSE-72 that no data made visible to DM through the EFD query interface will ever be rolled back, altered in place, or removed.
+  We also need to add a requirement to :cite:`LSE-72` that no data made visible to DM through the EFD query interface will ever be rolled back, altered in place, or removed.
 
 
 .. _transformation:
