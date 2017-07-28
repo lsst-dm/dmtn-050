@@ -67,7 +67,8 @@ Large File Annex
 ================
 
 The EFD Large File Annex is a set of files pointed to by entries in the other EFD tables.
-These files will be copied to a suitable filesystem at NCSA.
+These files will be copied to a suitable filesystem at NCSA and then replicated back to the Chilean DAC.
+The "pointer" entries should not be published in a Transformed EFD instance until the files are available locally.
 
 
 .. _other-considerations:
@@ -92,12 +93,12 @@ The Live EFD will begin accepting data when the Summit Facility achieves benefic
 The EFD transformation service was originally scheduled to meet an early integration exercise date of April 2018.
 With potential delays in the date of Auxiliary Telescope Spectrograph delivery from August 2018 to later in the year, that integration exercise could occur later as well.
 The DAX team has resources assigned to design the (logical and physical) schema for the Transformed EFD in the Fall 2018 cycle.
-Fritz says that a few story points from this could be advanced into calendar 2017 to finish the :ref:`initial schema <initial-schema>`.
+The DAX T/CAM has agreed that a few story points from this will be advanced into calendar 2017 to finish the :ref:`initial schema <initial-schema>`.
 Any other EFD schema work necessary to support initial production will be advanced to Spring 2018.
 
 
-.. .. rubric:: References
+.. rubric:: References
 
-.. .. bibliography:: local.bib lsstbib/books.bib lsstbib/lsst.bib lsstbib/lsst-dm.bib lsstbib/refs.bib lsstbib/refs_ads.bib
-..    :encoding: latex+latin
-..    :style: lsst_aa
+.. bibliography:: local.bib lsstbib/books.bib lsstbib/lsst.bib lsstbib/lsst-dm.bib lsstbib/refs.bib lsstbib/refs_ads.bib
+   :encoding: latex+latin
+   :style: lsst_aa
