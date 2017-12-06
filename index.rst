@@ -31,11 +31,11 @@ The interface between the EFD and Data Management (DM) is controlled by :lse:`72
 Transformation
 ==============
 
-The DM EFD Transformation Service will extract content from the Base replica of the EFD, transform it (lightly), and load it into the Reformatted EFD within the Consolidated Database at NCSA.
+The DM EFD Transformation Service will extract content from the Base replica of the EFD, transform it (lightly), and load it into the Transformed EFD within the Consolidated Database at NCSA.
 The Concept of Operations for this service is described in :ldm:`230` :cite:`LDM-230` section 2.4.
 
 This ETL process is under the control of the OCS via a commandable SAL component implemented by the Base Data Management Control System (DMCS).
-The Reformatted EFD will be replicated to the Base via Data Backbone mechanisms for use in the Chilean Data Access Center (DAC).
+The Transformed EFD will be replicated to the Base via Data Backbone mechanisms for use in the Chilean Data Access Center (DAC).
 The latency requirement for delivery of transformed EFD records in both locations is very relaxed: 24 hours, as documented in DMS-REQ-0102 in :lse:`61` :cite:`LSE-61`.
 However, we expect that the EFD Transformation Service will run continuously and should provide latencies of less than 5 minutes in normal operation.
 After an outage, latencies will increase until catch-up has completed.
@@ -74,7 +74,7 @@ Large File Annex
 
 The EFD Large File Annex is a set of files pointed to by entries in the other EFD tables.
 These files will be ingested into the Data Backbone under control of the EFD Transformation Service.
-The "pointer" entries must not be published in a Reformatted EFD instance until the files are available locally.
+The "pointer" entries must not be published in a Transformed EFD instance until the files are available locally.
 
 
 .. _other-considerations:
@@ -82,8 +82,8 @@ The "pointer" entries must not be published in a Reformatted EFD instance until 
 Other Considerations
 ====================
 
-The physical implementation of the schema may differ between the Original Format EFD and the Reformatted EFD.
-In particular, partitioning schemes appropriate for the Original Format EFD may be different in the Reformatted EFD.
+The physical implementation of the schema may differ between the Original Format EFD and the Transformed EFD.
+In particular, partitioning schemes appropriate for the Original Format EFD may be different in the Transformed EFD.
 
 It may be desirable to provide different policies for handling extraction of
 data when catch-up is required; other similar commandable SAL components such as the Image Archiver will have this capability.
@@ -98,7 +98,7 @@ Schedule
 The Original Format EFD will begin accepting data when the Summit Facility achieves beneficial occupancy and environmental and OCS systems are installed, currently expected to occur by the end of calendar 2017.
 The EFD transformation service was originally scheduled to meet an early integration exercise date of April 2018.
 With potential delays in the date of Auxiliary Telescope Spectrograph delivery from August 2018 to later in the year, that integration exercise could occur later as well.
-The DAX team has resources assigned to design the (logical and physical) schema for the Reformatted EFD in the Fall 2018 cycle.
+The DAX team has resources assigned to design the (logical and physical) schema for the Transformed EFD in the Fall 2018 cycle.
 The DAX T/CAM has agreed that a few story points from this will be advanced into calendar 2017 to finish the :ref:`initial schema <initial-schema>`.
 Any other EFD schema work necessary to support initial production will be advanced to Spring 2018.
 
